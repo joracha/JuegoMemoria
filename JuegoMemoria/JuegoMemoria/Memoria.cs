@@ -9,6 +9,15 @@ namespace JuegoMemoria
 {
     class Memoria : INotifyPropertyChanged
     {
+        public enum Dificultad
+        {
+            facil = 4,
+            medio = 16,
+            dificil = 36,
+        }
+
+        public readonly int tam;  // AQUI SE CAMBIA LA "DIFICULTAD"
+
         public IList<Tarjeta> Emojis { private set; get; } = new List<Tarjeta>();
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -17,12 +26,13 @@ namespace JuegoMemoria
 
         // ICommand implementations
 
-        public Memoria()
+        public Memoria(Dificultad dificultad = Dificultad.medio)
         {
             CantidadReveladas = 0;
+            tam = (int)dificultad;
 
             // Insertamos dos copias de cada emoji en posiciones aleatorias de la lista
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < tam/2; i++)
             {
                 Emojis.Insert((new Random()).Next(Emojis.Count), new Tarjeta(ListaEmojis.All[i]));
                 Emojis.Insert((new Random()).Next(Emojis.Count), new Tarjeta(ListaEmojis.All[i]));
