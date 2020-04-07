@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:local="clr-namespace:JuegoMemoria"
+             x:Class="JuegoMemoria.MainPage"
+             Title="Juego de memoria">
+
+    <Grid x:Name="tablero" Margin="7, 7, 7, 7">
+
+        <Grid.BindingContext>
+            <local:Memoria/>
+        </Grid.BindingContext>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Button Text="{Binding Emojis[0]}" Grid.Row="0" Grid.Column="1"></Button>
+        <Button Text="{Binding Emojis[1]}" Grid.Row="0" Grid.Column="2"></Button>
+        <Button Text="{Binding Emojis[2]}" Grid.Row="0" Grid.Column="3"></Button>
+        <Button Text="{Binding Emojis[3]}" Grid.Row="0" Grid.Column="4"></Button>
+
+        <Button Text="{Binding Emojis[4]}" Grid.Row="1" Grid.Column="1"></Button>
+        <Button Text="{Binding Emojis[5]}" Grid.Row="1" Grid.Column="2"></Button>
+        <Button Text="{Binding Emojis[6]}" Grid.Row="1" Grid.Column="3"></Button>
+        <Button Text="{Binding Emojis[7]}" Grid.Row="1" Grid.Column="4"></Button>
+
+        <Button Text="{Binding Emojis[8]}" Grid.Row="2" Grid.Column="1"></Button>
+        <Button Text="{Binding Emojis[9]}" Grid.Row="2" Grid.Column="2"></Button>
+        <Button Text="{Binding Emojis[10]}" Grid.Row="2" Grid.Column="3"></Button>
+        <Button Text="{Binding Emojis[11]}" Grid.Row="2" Grid.Column="4"></Button>
+
+        <Button Text="{Binding Emojis[12]}" Grid.Row="3" Grid.Column="1"></Button>
+        <Button Text="{Binding Emojis[13]}" Grid.Row="3" Grid.Column="2"></Button>
+        <Button Text="{Binding Emojis[14]}" Grid.Row="3" Grid.Column="3"></Button>
+        <Button Text="{Binding Emojis[15]}" Grid.Row="3" Grid.Column="4"></Button>
+
+    </Grid>
+
+</ContentPage>
