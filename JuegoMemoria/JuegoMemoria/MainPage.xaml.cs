@@ -13,9 +13,21 @@ namespace JuegoMemoria
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        Memoria model = new Memoria();
+
         public MainPage()
         {
             InitializeComponent();
+            model = (Memoria)tablero.BindingContext;
+        }
+
+        void voltearTarjeta(object sender, EventArgs args)
+        {
+            Button button = (Button)sender;
+            int id = Int32.Parse(button.ClassId);
+            int min = (model.Emojis[id].Visible) ? 3 : 2; // Si esta visible la seleccionada esta permitido ocultarla
+            if(model.CantidadReveladas < min)
+                model.voltearTarjeta(id);
         }
     }
 }

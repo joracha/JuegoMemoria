@@ -13,7 +13,7 @@ namespace JuegoMemoria
         public Tarjeta(String emoji)
         {
             this.emojiOculto = emoji;
-            this.emojiRevelado = emoji;
+            this.emojiRevelado = "";
             this.revelada = false;
         }
 
@@ -22,7 +22,12 @@ namespace JuegoMemoria
             get { return emojiRevelado; }
         }
 
-        public void revelar()
+        public bool Visible
+        {
+            get { return revelada; }
+        }
+
+        public void voltear()
         {
             if (!revelada)
             {

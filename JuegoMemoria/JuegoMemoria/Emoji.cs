@@ -45,7 +45,6 @@ namespace JuegoMemoria
             new Emoji(0x1F61B).ToString() ,
             new Emoji(0x1F911).ToString()
         };
-
     }
 
 }

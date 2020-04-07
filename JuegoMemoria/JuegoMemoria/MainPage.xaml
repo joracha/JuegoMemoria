@@ -24,25 +24,133 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <Button Text="{Binding Emojis[0]}" Grid.Row="0" Grid.Column="1"></Button>
-        <Button Text="{Binding Emojis[1]}" Grid.Row="0" Grid.Column="2"></Button>
-        <Button Text="{Binding Emojis[2]}" Grid.Row="0" Grid.Column="3"></Button>
-        <Button Text="{Binding Emojis[3]}" Grid.Row="0" Grid.Column="4"></Button>
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="0"
+            Text="{Binding Emojis[0]}"
+            Grid.Row="0"
+            Grid.Column="1">
+        </Button>
 
-        <Button Text="{Binding Emojis[4]}" Grid.Row="1" Grid.Column="1"></Button>
-        <Button Text="{Binding Emojis[5]}" Grid.Row="1" Grid.Column="2"></Button>
-        <Button Text="{Binding Emojis[6]}" Grid.Row="1" Grid.Column="3"></Button>
-        <Button Text="{Binding Emojis[7]}" Grid.Row="1" Grid.Column="4"></Button>
+        <Button
+            Clicked="voltearTarjeta"
+            ClassId="1"
+            Text="{Binding Emojis[1]}"
+            Grid.Row="0"
+            Grid.Column="2">
+        </Button>
 
-        <Button Text="{Binding Emojis[8]}" Grid.Row="2" Grid.Column="1"></Button>
-        <Button Text="{Binding Emojis[9]}" Grid.Row="2" Grid.Column="2"></Button>
-        <Button Text="{Binding Emojis[10]}" Grid.Row="2" Grid.Column="3"></Button>
-        <Button Text="{Binding Emojis[11]}" Grid.Row="2" Grid.Column="4"></Button>
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="2"
+            Text="{Binding Emojis[2]}"
+            Grid.Row="0"
+            Grid.Column="3">
+        </Button>
 
-        <Button Text="{Binding Emojis[12]}" Grid.Row="3" Grid.Column="1"></Button>
-        <Button Text="{Binding Emojis[13]}" Grid.Row="3" Grid.Column="2"></Button>
-        <Button Text="{Binding Emojis[14]}" Grid.Row="3" Grid.Column="3"></Button>
-        <Button Text="{Binding Emojis[15]}" Grid.Row="3" Grid.Column="4"></Button>
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="3"
+            Text="{Binding Emojis[3]}"
+            Grid.Row="0"
+            Grid.Column="4">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="4"
+            Text="{Binding Emojis[4]}"
+            Grid.Row="1"
+            Grid.Column="1">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="5"
+            Text="{Binding Emojis[5]}"
+            Grid.Row="1"
+            Grid.Column="2">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="6"
+            Text="{Binding Emojis[6]}"
+            Grid.Row="1"
+            Grid.Column="3">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="7"
+            Text="{Binding Emojis[7]}"
+            Grid.Row="1"
+            Grid.Column="4">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="8"
+            Text="{Binding Emojis[8]}"
+            Grid.Row="2"
+            Grid.Column="1">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="9"
+            Text="{Binding Emojis[9]}"
+            Grid.Row="2"
+            Grid.Column="2">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="10"
+            Text="{Binding Emojis[10]}"
+            Grid.Row="2"
+            Grid.Column="3">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="11"
+            Text="{Binding Emojis[11]}"
+            Grid.Row="2"
+            Grid.Column="4">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="12"
+            Text="{Binding Emojis[12]}"
+            Grid.Row="3"
+            Grid.Column="1">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="13"
+            Text="{Binding Emojis[13]}"
+            Grid.Row="3"
+            Grid.Column="2">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="14"
+            Text="{Binding Emojis[14]}"
+            Grid.Row="3"
+            Grid.Column="3">
+        </Button>
+
+        <Button 
+            Clicked="voltearTarjeta"
+            ClassId="15"
+            Text="{Binding Emojis[15]}"
+            Grid.Row="3"
+            Grid.Column="4">
+        </Button>
 
     </Grid>
 
