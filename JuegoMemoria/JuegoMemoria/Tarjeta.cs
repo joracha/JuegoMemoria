@@ -61,6 +61,7 @@ namespace JuegoMemoria
             if (!(obj is Tarjeta)) return false;
             return (obj as Tarjeta).emojiOculto.Equals(this.emojiOculto);
         }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();

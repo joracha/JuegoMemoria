@@ -45,7 +45,8 @@ namespace JuegoMemoria
             button.SetBinding(Button.TextProperty, new Binding() { Path = $"Emojis[{id}]" });
             button.FontSize = 25;
             button.BackgroundColor = Color.FromHex("#075E54");
-            button.Clicked += voltearTarjeta;
+            button.Released += voltearTarjeta;
+            button.Clicked += matenerOVoltearTarjeta;
             Grid.SetRow(button, row);
             Grid.SetColumn(button, col);
 
@@ -70,11 +71,19 @@ namespace JuegoMemoria
         void voltearTarjeta(object sender, EventArgs args)
         {
             Button button = (Button)sender;
-            Console.WriteLine("hola" + button.ClassId + button.Text);
+            Console.WriteLine(" Button " + button.ClassId);
             int id = Int32.Parse(button.ClassId);
-            int min = (model.Emojis[id].Visible) ? 3 : 2; // Si esta visible la seleccionada esta permitido ocultarla
-            if (model.CantidadReveladas < min)
-                model.voltearTarjeta(id);
+            //int min = (model.Emojis[id].Visible) ? 3 : 2; // Si esta visible la seleccionada esta permitido ocultarla
+            //if (model.CantidadReveladas < min)
+            model.voltearTarjeta(id);
+        }
+
+        private void matenerOVoltearTarjeta(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int id = Int32.Parse(button.ClassId);
+            Console.WriteLine(" Despues " + button.ClassId);
+            model.matenerOVoltearTarjeta(id);
         }
     }
 }
