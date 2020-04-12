@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static JuegoMemoria.Memoria;
 
 namespace JuegoMemoria
 {
@@ -14,11 +16,11 @@ namespace JuegoMemoria
     public partial class MainPage : ContentPage
     {
         Memoria model;
-
-        public MainPage()
+        public MainPage(int dificultad)
         {
+            NavigationPage.SetHasNavigationBar(this, true);
             InitializeComponent();
-            model = new Memoria(Memoria.Dificultad.medio); // Nuevo model con dificultad dificil
+            model = new Memoria((Dificultad)dificultad); // Nuevo model con dificultad dificil
             tablero.BindingContext = model; // El bindingContext del grid con nombre tablero sera el modelo
             addRowDef(); // Se agregan los row y col necesarias segun el tam del tablero
             llenarTablero(); // se llenan los campos del tablero
@@ -44,7 +46,7 @@ namespace JuegoMemoria
             button.ClassId = "" + id;
             button.SetBinding(Button.TextProperty, new Binding() { Path = $"Emojis[{id}]" });
             button.FontSize = 25;
-            button.BackgroundColor = Color.FromHex("#075E54");
+            button.BackgroundColor = Color.DarkViolet;
             button.Released += voltearTarjeta;
             button.Clicked += matenerOVoltearTarjeta;
             Grid.SetRow(button, row);
@@ -85,5 +87,7 @@ namespace JuegoMemoria
             Console.WriteLine(" Despues " + button.ClassId);
             model.matenerOVoltearTarjeta(id);
         }
+
+      
     }
 }

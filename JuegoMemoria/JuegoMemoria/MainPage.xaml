@@ -7,11 +7,10 @@
              xmlns:local="clr-namespace:JuegoMemoria"
              x:Class="JuegoMemoria.MainPage"
              Title="Juego de memoria"
-             x:Name="view">
+             x:Name="view"
+             NavigationPage.HasNavigationBar="true">
 
-
-    <Grid x:Name="tablero" Padding="5,5,5,5">
-
+    <Grid Grid.Row="1" x:Name="tablero" Padding="7,7,7,7">
     </Grid>
 
 </ContentPage>

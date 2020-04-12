@@ -9,12 +9,14 @@ namespace JuegoMemoria
         String emojiOculto;
         String emojiRevelado;
         bool revelada;
+        bool descubierta;
 
         public Tarjeta(String emoji)
         {
             this.emojiOculto = emoji;
             this.emojiRevelado = "";
             this.revelada = false;
+            this.descubierta = false;
         }
 
         public String Emoji
@@ -25,6 +27,12 @@ namespace JuegoMemoria
         public bool Visible
         {
             get { return revelada; }
+        }
+
+        public bool Descubierta
+        {
+            get { return descubierta;  }
+            set { this.descubierta = value; }
         }
 
         public void voltear()

@@ -43,7 +43,7 @@ namespace JuegoMemoria
             new Emoji(0x1F923).ToString() , // 🤣
             new Emoji(0x1F609).ToString() , // 😉
             new Emoji(0x1F607).ToString() , // 😇
-            new Emoji(0x1F970).ToString() , // 🥰
+            new Emoji(0x1F914).ToString() , // 🥶
 
             new Emoji(0x1F929).ToString() , // 🤩
             new Emoji(0x1F618).ToString() , // 😘
