@@ -17,7 +17,7 @@ namespace JuegoMemoria
         public readonly int tam;  // AQUI SE CAMBIA LA "DIFICULTAD"
 
         private int anterior;
-        private int nose;
+        private int estado;
 
         public IList<Tarjeta> Emojis { private set; get; } = new List<Tarjeta>();
 
@@ -32,7 +32,7 @@ namespace JuegoMemoria
             CantidadReveladas = 0;
             tam = (int)dificultad;
             anterior = -1;
-            nose = -1;
+            estado = -1;
 
             // Insertamos dos copias de cada emoji en posiciones aleatorias de la lista
             fillList();
@@ -54,12 +54,12 @@ namespace JuegoMemoria
                 Emojis[numero].voltear();
                 CantidadReveladas++;
                 OnPropertyChanged("Emojis");
-                if (nose == -1)
+                if (estado == -1)
                 {
                     anterior = numero;
-                    nose = -3;
+                    estado = -3;
                 } else
-                    nose = -2;
+                    estado = -2;
             }
         }
 
@@ -68,13 +68,13 @@ namespace JuegoMemoria
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        internal void matenerOVoltearTarjeta(int numero)
+        internal async void matenerOVoltearTarjeta(int numero)
         {
-            if (nose == -2)
+            if (estado == -2)
             {
                 if (Emojis[numero] != Emojis[anterior])
                 {
-                    Task.Delay(TimeSpan.FromSeconds(1)).Wait();
+                    await Task.Delay(TimeSpan.FromSeconds(1));
                     Emojis[numero].voltear();
                     Emojis[anterior].voltear();
                     CantidadReveladas -= 2;
@@ -87,9 +87,14 @@ namespace JuegoMemoria
                     OnPropertyChanged("Emojis");
                     CantidadReveladas = 0;
                 }
-                nose = -1;
+                estado = -1;
             }
 
+        }
+
+        public bool Gano
+        {
+            get { return CantidadReveladas == tam; }
         }
     }
 }

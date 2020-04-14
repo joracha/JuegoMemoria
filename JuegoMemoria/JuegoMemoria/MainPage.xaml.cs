@@ -16,6 +16,7 @@ namespace JuegoMemoria
     public partial class MainPage : ContentPage
     {
         Memoria model;
+
         public MainPage(int dificultad)
         {
             NavigationPage.SetHasNavigationBar(this, true);
@@ -48,7 +49,7 @@ namespace JuegoMemoria
             button.FontSize = 25;
             button.BackgroundColor = Color.DarkViolet;
             button.Released += voltearTarjeta;
-            button.Clicked += matenerOVoltearTarjeta;
+            button.Clicked +=  matenerOVoltearTarjeta;
             Grid.SetRow(button, row);
             Grid.SetColumn(button, col);
 
@@ -70,24 +71,37 @@ namespace JuegoMemoria
         }
 
         // EVENTOS
-        void voltearTarjeta(object sender, EventArgs args)
+        private void voltearTarjeta(object sender, EventArgs args)
         {
+
             Button button = (Button)sender;
-            Console.WriteLine(" Button " + button.ClassId);
             int id = Int32.Parse(button.ClassId);
-            //int min = (model.Emojis[id].Visible) ? 3 : 2; // Si esta visible la seleccionada esta permitido ocultarla
-            //if (model.CantidadReveladas < min)
             model.voltearTarjeta(id);
+
+            if (model.Gano)
+            {
+                DisplayAlert("Felicidades", "Has ganado la partida. Gracias por jugar", "Yaaay :D");
+            }
+
         }
 
         private void matenerOVoltearTarjeta(object sender, EventArgs e)
         {
+        
             Button button = (Button)sender;
             int id = Int32.Parse(button.ClassId);
-            Console.WriteLine(" Despues " + button.ClassId);
+            flipAnimation(button);
             model.matenerOVoltearTarjeta(id);
+           
         }
 
-      
+        public void flipAnimation(View view)
+        {
+            view.RotateYTo(-90, 200);
+            view.RotationY = -270;
+            view.RotateYTo(-360, 200);
+            view.RotationY = 0;
+        }
+
     }
 }

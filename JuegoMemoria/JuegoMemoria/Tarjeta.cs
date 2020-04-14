@@ -32,7 +32,11 @@ namespace JuegoMemoria
         public bool Descubierta
         {
             get { return descubierta;  }
-            set { this.descubierta = value; }
+        }
+
+        public void seDescubrio()
+        {
+            this.descubierta = true;
         }
 
         public void voltear()
